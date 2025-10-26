@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MeCrypt App - Secure Text Encryption Tool 🔐
 
-## Getting Started
+Selamat datang di **MeCrypt App**, sebuah alat enkripsi teks modern yang mengamankan pesan Anda menggunakan kunci dinamis berbasis waktu. Proyek ini dibangun dengan Next.js dan dirancang untuk keamanan dan kemudahan penggunaan.
 
-First, run the development server:
+#### Halaman Enkripsi
+![MeCrypt App - Encrypt Page](screenshot/encrypt-page.png)
+#### Halaman Dekripsi (Mobile)
+![MeCrypt App - Decrypt Page Mobile](screenshot/decrypt-page-mobile.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Fitur-fitur
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Enkripsi Dinamis Berbasis Waktu:** Kunci enkripsi dibuat secara otomatis dan unik untuk setiap jam, berdasarkan tanggal dan waktu saat ini.
+-   **Reset Kunci Otomatis:** Setiap jam, kunci di-reset. Pesan yang dienkripsi pada jam sebelumnya tidak akan bisa didekripsi lagi, sehingga meningkatkan keamanan.
+-   **Antarmuka Terpisah:** Halaman yang didedikasikan khusus untuk enkripsi dan dekripsi demi alur kerja yang jelas.
+-   **Desain Responsif:** Tampilan optimal di perangkat desktop maupun mobile dengan menu navigasi yang adaptif.
+-   **UI Profesional:** Antarmuka gelap yang modern dan bersih, dilengkapi dengan ikon untuk kemudahan penggunaan.
+-   **Fitur Bantuan:** Tombol "Copy to Clipboard" dan "Clear" untuk meningkatkan efisiensi.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Teknologi yang Digunakan
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **Framework:** Next.js (App Router)
+-   **Styling:** Tailwind CSS
+-   **Library:** React, Font Awesome
+-   **Deployment:** Vercel
 
-## Learn More
+## 🚀 Instalasi & Menjalankan Proyek
 
-To learn more about Next.js, take a look at the following resources:
+Ingin menjalankan proyek ini di komputermu? Ikuti langkah-langkah berikut:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clone repositori ini:**
+    ```sh
+    git clone https://github.com/ofikur/encrypt-message.git
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Masuk ke direktori proyek:**
+    ```sh
+    cd encrypt-message
+    ```
 
-## Deploy on Vercel
+3.  **Install semua dependencies:**
+    ```sh
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Jalankan development server:**
+    ```sh
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Buka `http://localhost:3000` di browsermu untuk mulai mengenkripsi pesan!
+
+---
+
+## 📜 Lisensi
+
+Proyek ini dirilis di bawah Lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanjut.
+
+---
+
+### Terima Kasih 
+#### ~ Ofikur R.

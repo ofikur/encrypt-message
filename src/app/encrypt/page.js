@@ -2,21 +2,21 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import Countdown from '../../components/Countdown';
+import Countdown from '@/components/Countdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShieldHalved, faCopy, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faShieldHalved, faCopy, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-function EncryptPage() {
+export default function EncryptPage() {
     const [inputText, setInputText] = useState('');
     const [outputText, setOutputText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [copyButtonText, setCopyButtonText] = useState('Copy');
+    const [isCopied, setIsCopied] = useState(false);
 
     const handleEncrypt = async () => {
         if (!inputText) return;
         setIsLoading(true);
         setOutputText('');
-        setCopyButtonText('Copy');
+        setIsCopied(false);
         try {
             const response = await axios.post('/api/encrypt', { text: inputText });
             setOutputText(response.data.result);
@@ -30,15 +30,15 @@ function EncryptPage() {
     const handleCopy = () => {
         if (outputText) {
             navigator.clipboard.writeText(outputText);
-            setCopyButtonText('Copied!');
-            setTimeout(() => setCopyButtonText('Copy'), 2000);
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 2000);
         }
     };
 
     const handleClear = () => {
         setInputText('');
         setOutputText('');
-        setCopyButtonText('Copy');
+        setIsCopied(false);
     };
     
     return (
@@ -83,13 +83,12 @@ function EncryptPage() {
                         <button 
                             onClick={handleCopy}
                             className={`absolute top-3 right-3 text-xs font-semibold py-1 px-2 rounded-md transition-colors ${
-                                copyButtonText === 'Copied!' 
+                                isCopied 
                                 ? 'bg-green-600 text-white' 
                                 : 'bg-slate-700 hover:bg-slate-600 text-slate-300'
                             }`}
                         >
-                           <FontAwesomeIcon icon={faCopy} className="mr-1" />
-                           {copyButtonText}
+                           <FontAwesomeIcon icon={isCopied ? faCheck : faCopy} />
                         </button>
                     )}
                 </div>
@@ -97,5 +96,3 @@ function EncryptPage() {
         </div>
     );
 }
-
-export default EncryptPage;
