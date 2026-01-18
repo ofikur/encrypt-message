@@ -2,7 +2,7 @@ name: System Log Sequence
 
 on:
   schedule:
-    - cron: '0 1-20 * * *'
+    - cron: '11 1-20 * * *'
   workflow_dispatch:
 
 permissions:
